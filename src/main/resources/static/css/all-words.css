@@ -1,0 +1,129 @@
+.words__section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.header {
+    margin: 20px auto 10px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table__header {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.words {
+    max-width: 300px;
+}
+
+.sentence {
+    max-width: 500px;
+}
+
+.id {
+    width: 50px;
+}
+
+.table__cell {
+    height: 50px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.polish {
+    color: #777;
+    font-size: 14px;
+}
+
+.words__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.words__link {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+}
+
+.words__button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid black;
+    outline: none;
+    background-color: initial;
+    background-position: center center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.words__button:hover {
+    background-color: #eee;
+}
+
+.words__button:active {
+    background-color: #aaa;
+}
+
+.words__button.left {
+    background-image: url("/images/left-arrow.svg");
+}
+
+.words__button.right {
+    background-image: url("/images/right-arrow.svg");
+}
+
+.words__button:disabled:hover {
+    background-color: initial;
+    cursor: not-allowed;
+}
+
+.words__input {
+    height: 30px;
+    width: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid black;
+    outline: none;
+}
+
+.words__input::-webkit-outer-spin-button,
+.words__input::-webkit-inner-spin-button,
+.words__input {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+}
+
+.words__page-info {
+    display: flex;
+    align-items: center;
+}
+
+.words__paragraph {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.words_span {
+    margin: 3px;
+}

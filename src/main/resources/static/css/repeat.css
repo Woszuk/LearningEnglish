@@ -1,0 +1,50 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.english-word {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.input {
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+span.error {
+    color: red;
+}
+
+span.success {
+    color: green;
+}
+
+.submit {
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 10px 4px;
+    padding: 5px;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    background: #332223;
+    color: white;
+    border: 1px solid black;
+    outline: none;
+}
+
+.submit:hover {
+    background: #70484a;
+}
+
+.submit.disabled {
+    cursor: initial;
+    color: black;
+    background: #aaa;
+}

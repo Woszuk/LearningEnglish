@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/main-navigation.css">
+    <link rel="stylesheet" href="css/main-banner.css">
+    <link rel="stylesheet" href="css/all-words.css">
+    <link rel="stylesheet" href="css/repeat.css">
+    <link rel="stylesheet" href="css/add-word.css">
+</head>
+
+<body>
+<div class="content">
+    <section class="main-nav">
+        <nav th:replace="fragments/nav::nav"></nav>
+    </section>
+
+    <section class="words__section">
+        <h2 class="header">adding a word</h2>
+        <span class="span" th:if="${empty != null}">You need to add a word to the dictionary!</span>
+        <span class="span" th:if="${error != null}">The search word was not found!</span>
+        <span class="span" th:if="${wordExist != null}">Word already exist in dictionary!</span>
+        <span class="span success" th:text="'Added \'' + ${success} + '\' to the dictionary'" th:if="${success != null}"></span>
+        <div class="repeat__container">
+                <form class="form" method="post">
+                    <label class="label" for="word">New word:</label>
+                    <input name="word" class="input" id="word" autofocus autocomplete="off" th:if="${wordExist != null}" th:value="${wordExist}" required>
+                    <input name="word" class="input" id="word1" autofocus autocomplete="off" th:if="${error != null || error == null && wordExist == null}" th:value="${error}" required>
+                    <button type="submit" class="submit">Add</button>
+                </form>
+        </div>
+    </section>
+</div>
+
+</body>
+
+</html>

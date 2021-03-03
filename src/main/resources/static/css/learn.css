@@ -1,0 +1,34 @@
+.learn__container {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.learn__english-word {
+    margin: 15px 0;
+}
+
+.learn__field {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.learn__field.success {
+    background: linear-gradient(to right top, #4ba757ce, #7bf30afa);
+    color: black;
+}
+
+.learn__field.failure {
+    background: linear-gradient(to right top, #3f1616ce, #ec0707e7);
+    color: white;
+}

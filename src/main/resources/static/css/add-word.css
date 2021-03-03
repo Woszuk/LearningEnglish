@@ -1,0 +1,23 @@
+.span {
+    color: red;
+    font-size: 16px;
+}
+
+.span.success {
+    color: green;
+}
+
+.form__container {
+    display: flex;
+}
+
+.form {
+    margin: 0 20px;
+}
+
+.label {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+

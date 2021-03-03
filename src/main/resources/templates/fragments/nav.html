@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://thymeleaf.org" >
+<nav class="main-navigation">
+    <div class="main-navigation__inner">
+        <div class="main-navigation__logo">
+            <a th:href="@{/}">
+                <img class="logo__img" th:src=@{images/logo.gif} alt="logo">
+            </a>
+        </div>
+        <ul class="main-navigation__list">
+            <li class="list-item">
+                <a class="list__link" th:href="@{/}">
+                    Word list
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="list__link" th:href="@{/write-the-meaning}">
+                    Write a word
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="list__link" th:href="@{/choose-the-meaning}">
+                    Choose a word
+                </a>
+            </li>
+            <li class="list-item">
+                <a class="list__link" th:href="@{/add-word}">
+                    Adding a word
+                </a>
+            </li>
+<!--            <li class="list-item">-->
+<!--                <a class="list__link" href="#">-->
+<!--                    Moje słówka-->
+<!--                </a>-->
+<!--            </li>-->
+        </ul>
+    </div>
+</nav>
+</html>

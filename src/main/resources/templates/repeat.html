@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/main-navigation.css">
+    <link rel="stylesheet" href="css/main-banner.css">
+    <link rel="stylesheet" href="css/all-words.css">
+    <link rel="stylesheet" href="css/repeat.css">
+</head>
+
+<body>
+    <div class="content">
+        <section class="main-nav">
+            <nav th:replace="fragments/nav::nav"></nav>
+        </section>
+
+        <section class="words__section">
+            <h2 class="header">Repeating words</h2>
+            <div class="repeat__container">
+                <form class="form" method="post">
+                    <h2 class="english-word" th:text="${session.word.englishWord}"></h2>
+                    <input name="word" class="input" placeholder="equivalent in Polish" autofocus autocomplete="off">
+                    <input type="hidden" th:value="${session.word.polishWord}" id="hidden">
+                    <div class="form__button">
+                        <input type="submit" value="Check" class="submit">
+                        <button type="button" class="submit" id="hint"></button>
+                        <button type="button" class="submit" id="know">I don't know</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script th:src="@{js/app.js}"></script>
+</body>
+
+</html>

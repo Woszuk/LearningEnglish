@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/main-navigation.css">
+    <link rel="stylesheet" href="css/main-banner.css">
+    <link rel="stylesheet" href="css/all-words.css">
+</head>
+
+<body>
+    <div class="content">
+        <section class="main-nav">
+           <nav th:replace="fragments/nav::nav"></nav>
+        </section>
+
+        <section class="words__section">
+            <h2 class="header">List of all words</h2>
+            <div class="words__page">
+                <a class="words__link" th:href="@{/(page=${page-1})}">
+                    <button class="words__button left" th:if="${page>1}"></button>
+                    <button class="words__button left" th:if="${page==1}" disabled></button>
+                </a>
+                <div class="words__page-info">
+                    <form>
+                        <input type="number" name="page" min="1" th:max="${maxPage}" th:value="${page}" class="words__input" autocomplete="off">
+                    </form>
+                    <p class="words__paragraph">z <span class="words_span" th:text="${maxPage}"></span></p>
+                </div>
+
+                <a class="words__link" th:href="@{/(page=${page+1})}">
+                    <button class="words__button right" th:if="${page < maxPage}"></button>
+                    <button class="words__button right" th:if="${page == maxPage}" disabled></button>
+                </a>
+            </div>
+            <div class="words__container">
+                <table class="table">
+                    <tr class="table__row">
+                        <th class="table__header id">Id</th>
+                        <th class="table__header">English</th>
+                        <th class="table__header">Polish</th>
+                        <th class="table__header">Example sentence</th>
+                    </tr>
+                    <tr th:each="word, iterStat: ${words}">
+                        <td class="table__cell id" th:text="${iterStat.count + ((page-1)*10)}"></td>
+                        <td class="table__cell words" th:text="${word.englishWord}"></td>
+                        <td class="table__cell words" th:text="${word.polishWord}"></td>
+                        <td class="table__cell sentence">
+                            <p class="cell__paragraph english active" th:text="${word.englishSentence}" th:if="${word.englishSentence != null}"></p>
+                            <p class="cell__paragraph polish" th:text="'(' + ${word.polishSentence} + ')'" th:if="${word.englishSentence != null}"></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script th:src="@{js/url.js}"></script>
+</body>
+
+</html>

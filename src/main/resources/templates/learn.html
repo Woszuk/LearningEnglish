@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English</title>
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/main-navigation.css">
+    <link rel="stylesheet" href="css/main-banner.css">
+    <link rel="stylesheet" href="css/all-words.css">
+    <link rel="stylesheet" href="css/learn.css">
+</head>
+
+<body>
+    <div class="content">
+        <section class="main-nav">
+            <nav th:replace="fragments/nav::nav"></nav>
+        </section>
+
+        <section class="words__section">
+            <h2 class="header">Learning vocabulary</h2>
+            <h2 class="learn__english-word" th:text="${oneWord.englishWord}"></h2>
+            <form method="post">
+                <div class="learn__container">
+                    <div class="learn__field" th:each="word: ${words}" th:text="${word.polishWord}"></div>
+                </div>
+                <input type="hidden" th:value="${oneWord.id}" name="wordId">
+                <input type="hidden" value="" name="checkAnswer" id="check">
+            </form>
+            <input type="hidden" th:value="${oneWord.polishWord}" id="hidden">
+        </section>
+    </div>
+
+    <script th:src="@{js/learn.js}"></script>
+</body>
+
+</html>
